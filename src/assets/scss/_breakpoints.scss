@@ -1,0 +1,35 @@
+$breakpoints: (
+  "xl-down": (
+    max-width: 1500px,
+  ),
+  "lg-down": (
+    max-width: 1200px,
+  ),
+  "md-down": (
+    max-width: 900px,
+  ),
+  "sm-down": (
+    max-width: 650px,
+  ),
+  "xs-down": (
+    max-width: 500px,
+  ),
+  "xl-up": (
+    min-width: 1500px,
+  ),
+  "lg-up": (
+    min-width: 1200px,
+  ),
+  "mmd-up": (
+    min-width: 800px,
+  ),
+  "md-up": (
+    min-width: 900px,
+  ),
+  "sm-up": (
+    min-width: 650px,
+  ),
+  "xs-up": (
+    min-width: 500px,
+  ),
+) !default;

@@ -1,0 +1,33 @@
+// breakpoints mixins
+
+@mixin theme-breakpoint($breakpoint) {
+    /* If the key exists in the map */
+    @if map-has-key($breakpoints, $breakpoint) {
+      /* Prints a media query based on the value */
+      @media #{inspect(map-get($breakpoints, $breakpoint))} {
+        @content;
+      }
+    }
+  
+    /* If the key doesn't exist in the map */
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+  }
+  
+  @mixin zoom-in-out() {
+    animation: zoom-in-zoom-out 2s ease-out infinite;
+    @keyframes zoom-in-zoom-out {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.05, 1.05);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+  }
+  
