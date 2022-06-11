@@ -14,6 +14,7 @@ export default function Navbar() {
           </div>
         </div>
         <div className={styles['navbar__navbar-right']}>
+        <i class="search icon"></i>
         {/* <NotificationIcon fill="currentColor" filled /> */}
         </div>
       </nav>
