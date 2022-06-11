@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 
 // Pages
 import Home from './pages/home';
+import LogIn from '././pages/auth/login';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LogIn />} />
       </Routes>
     </div>
   );
