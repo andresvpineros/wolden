@@ -8,7 +8,9 @@ import {
 	InputLabel,
 	OutlinedInput,
 	InputAdornment,
-	IconButton
+	IconButton,
+	useTheme,
+	useMediaQuery,
 } from '@mui/material';
 import styles from './Login.module.scss';
 import Visibility from '@mui/icons-material/Visibility';
@@ -19,6 +21,11 @@ import facebookLogin from '../../assets/images/FacebookComponent.svg';
 import googleLogin from '../../assets/images/GoogleComponent.svg';
 
 function Login() {
+
+	// BreakPoint
+	const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
+
 	const [ values, setValues ] = React.useState({
 		email: '',
 		password: '',
@@ -39,12 +46,14 @@ function Login() {
 	};
 	return (
 		<Grid className={styles.login} container>
-			<Grid className={styles['login-image--container']} md={6}>
-				<Box>
-					<Box />
-				</Box>
-			</Grid>
-			<Grid className={styles['login-form--container']} md={6}>
+			{ matches &&
+				<Grid className={styles['login-image--container']} md={6}>
+					<Box>
+						<Box />
+					</Box>
+				</Grid>
+			}
+			<Grid className={styles['login-form--container']} sm={12} md={6}>
 				<div className={styles['login-title__center']}>
 					<Box className={styles['login-logo--container']}>
 						<Typography>W</Typography>
@@ -107,17 +116,17 @@ function Login() {
           <Box className={styles['login-forgotpassword']}>
             <Typography>Did you forgot your password? <a href='#'>Click Here</a></Typography>
           </Box>
-          <Box>
+          <Box className={styles['login-socialmedia']}>
             <Typography>Log in with social media.</Typography>
             <div className={styles['login-line']}></div>
-            <Box>
+            <Box className={styles['login-socialmedia__icons']}>
               <img src={facebookLogin} alt='facebook log in' />
               <Typography>or</Typography>
               <img src={googleLogin} alt='google log in' />
             </Box>
           </Box>
           <Box>
-            <Typography>Don't have an account? <a href='#'>Click Here</a></Typography>t
+            <Typography align='center'>Don't have an account? <a href='#'>Click Here</a></Typography>
           </Box>
         </div>
 			</Grid>
