@@ -8,6 +8,10 @@ import {
 } from '@mui/icons-material';
 
 import UserMenu from '../UserMenu';
+import NotificationsMenu from '../Buttons/NotificationMenu';
+
+// Icons
+import { Notifications } from '@mui/icons-material';
 
 export default function Navbar() {
   return (
@@ -24,8 +28,10 @@ export default function Navbar() {
           </form>
         </div>
         <div className={styles['navbar__navbar-right']}>
-        <i class="search icon"></i>
-          <UserMenu />
+          <div className={styles['navbar__container-icons']}>
+            <NotificationsMenu/>
+            <UserMenu/>
+          </div>
         </div>
       </nav>
   )

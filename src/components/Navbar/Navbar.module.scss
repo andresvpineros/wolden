@@ -6,9 +6,10 @@
   height: 75px;
   padding: 0 15px;
   background-color: #06283D;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   align-items: center;
   text-align: center;
-
+  
   &__searchbar {
     display: flex;
     align-items: center;
@@ -49,6 +50,13 @@
       font-size: 32px;
       font-weight: 600;
     }
+  }
+
+  &__container-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
   
   &__navbar-left {
