@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import styles from './Navbar.module.scss';
 
@@ -10,12 +10,22 @@ import {
 import UserMenu from '../UserMenu';
 import NotificationsMenu from '../Buttons/NotificationMenu';
 
-// Icons
-import { Notifications } from '@mui/icons-material';
-
 export default function Navbar() {
+
+  const [navbar, setNavbar] = useState(false);
+
+  const scrollNavbar = () => {
+    if(window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  }
+
+  window.addEventListener('scroll', scrollNavbar);
+
   return (
-      <nav className={styles.navbar}>
+      <nav className={navbar ? styles['navbar__active'] : styles.navbar}>
         <div className={styles['navbar__navbar-left']}>
           <a className={styles['navbar__logo']} href="/" alt="Logo"><span className={styles['navbar__logo__first-letter']}>W</span>olden</a>
         </div>
