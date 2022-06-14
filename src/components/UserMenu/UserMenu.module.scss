@@ -1,0 +1,43 @@
+@import "../../assets/scss/main.scss";
+
+.user-menu {
+    &__button {
+        display: flex;
+        background-color: transparent;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        margin: 0 auto;
+        padding: 5px 10px;
+        cursor: pointer;
+       
+        &:hover {
+            background-color: #07334e;
+            transition: 0.5s ease;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            text-align: left;
+
+            &__user-name {
+                font-weight: 500;
+                color: #FFF;
+            }
+    
+            &__status {
+                font-weight: 500;
+                color: #ADADAD;
+            }
+        }
+
+        &__arrow-icon {
+            margin-bottom: 15px;
+            margin-left: 5px;
+            color: #FFF;
+        }
+    }
+}
